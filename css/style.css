@@ -123,12 +123,16 @@ body {
           flex: 1 1 auto;
   margin: 15px 12px;
   margin-bottom: 75px;
-  min-width: 259px;
+  max-width: 100%;
 }
 
 button {
   background: none;
   color: inherit;
+}
+
+.portfolio {
+  margin-right: 10px;
 }
 
 .sidebar,
@@ -189,6 +193,7 @@ article__info-more {
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
+  text-align: center;
 }
 .info__title {
   margin-top: 13px;
@@ -247,8 +252,8 @@ article__info-more {
 
 .icon__wrapper {
   position: relative;
-  width: 35px;
-  height: 35px;
+  min-width: 35px;
+  min-height: 35px;
   background: #242424;
   -webkit-box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.24);
           box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.24);
@@ -269,6 +274,12 @@ article__info-more {
   height: 15.75px;
 }
 
+.contact__into {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
 .contact__title {
   margin-bottom: 5px;
   font-weight: 600;
@@ -295,4 +306,153 @@ article__info-more {
 .social__link img {
   width: 18px;
   height: 18px;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: #242424;
+  -webkit-box-shadow: 0px 0px 59px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 59px rgba(0, 0, 0, 0.05);
+  border-radius: 25px 25px 0px 0px;
+}
+.navbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 10px;
+}
+.navbar__link {
+  color: #f0eeee;
+  font-size: 14px;
+  padding: 20px 7px;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+.navbar__link:hover, .navbar__link:focus {
+  color: #B2B465;
+}
+.navbar__link.active {
+  color: #B2B465;
+}
+
+@media (max-width: 1200px) {
+  .portfolio {
+    margin-right: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .main {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    padding-top: 50px;
+  }
+  .main {
+    max-width: 100%;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .main__content {
+    width: 981px;
+    margin: 0;
+  }
+  .info__show-more {
+    display: none;
+  }
+  .sidebar {
+    max-height: 100%;
+    width: 200px;
+  }
+  .sidebar__info-more {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  .sidebar__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .avatar__wrapper {
+    width: 125px;
+    height: 125px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .social__list {
+    padding-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 16px;
+    margin-left: 0px;
+  }
+}
+@media (max-width: 960px) {
+  body {
+    padding-right: 15px;
+  }
+}
+@media (min-width: 960px) {
+  .main__content {
+    position: relative;
+    background-color: #242424;
+    max-height: 507px;
+    background: #242424;
+    border-radius: 25px;
+  }
+  .navbar {
+    position: absolute;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    height: 62px;
+  }
+}
+@media (max-width: 960px) {
+  .main {
+    min-width: 100%;
+  }
 }

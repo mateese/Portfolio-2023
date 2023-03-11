@@ -10,6 +10,7 @@ body {
     font-family: 'Inter';
     font-weight: 400;
     background-color: #1A1A1A;
+    // padding: 0px 15px 0px 0px;
 }
 .wrapper {
     overflow: hidden;
@@ -20,23 +21,27 @@ body {
 .container {
     max-width: 1200px;
     margin: 0px auto;
-    // padding: 0px 10px;
+    // padding: 0px 15px 0px 0px;
 }
 .main {
     flex: 1 1 auto;
     margin: 15px 12px;
     margin-bottom: 75px;
-    min-width: 259px;
+    max-width: 100%;
 }
 //======== modificators ==========
 button {
     background: none;
     color: inherit;
 }
+.hide {
+    
+}
 //======== main style ==========
 
 
 .portfolio {
+    margin-right: 10px;
 }
 .sidebar,
 article {
@@ -63,6 +68,7 @@ article {
             opacity: 0;
             visibility: hidden;
             transition: all 0.5s ease 0s;
+
 		}
         
 }
@@ -80,7 +86,8 @@ article {
 		}
 }
 .info {
-
+    
+    
 		&__wrapper {
 		}
 
@@ -88,6 +95,7 @@ article {
             font-weight: 600;
             font-size: 14px;
             line-height: 17px;
+            text-align: center;
 		}
 
 		&__title {
@@ -138,20 +146,22 @@ article {
 		}
         
 		&__item {
-            
             display: flex;
             align-items: center;
+
 		}
         &__item:not(:last-child) {
             margin-bottom: 13px;
+
+           
         }
 }
 .icon {
 
 		&__wrapper {
             position: relative;
-            width: 35px;
-            height: 35px;
+            min-width: 35px;
+            min-height: 35px;
             background: #242424;
             box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.24);
             border-radius: 6px;
@@ -168,7 +178,10 @@ article {
 .contact {
 
 		&__into {
-            
+            // max-width: 900%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 		}
 
 		&__title {
@@ -185,6 +198,8 @@ article {
             line-height: 12px;
             color: #ECECEC;
             font-style: normal;
+
+            
 		}
 }
 .social {
@@ -207,4 +222,136 @@ article {
                 height: 18px;   
             }
 		}
+}
+//=============== navbar =========================================================================================================================================
+
+.main {
+
+    &__content {
+    }
+}
+.navbar {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #242424;
+    box-shadow: 0px 0px 59px rgba(0, 0, 0, 0.05);
+    border-radius: 25px 25px 0px 0px;
+
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        color: #f0eeee;
+        font-size: 14px;
+        padding: 20px 7px;
+        transition: color 0.3s ease 0s;
+        &:hover, &:focus {
+            color:#B2B465
+        }
+        &.active {
+            color:#B2B465;
+        }
+    }
+    
+}
+
+//============= responsive for large screen ===========================================================================================================================================
+@media (max-width: 1200px) {
+    .portfolio {
+        margin-right: 10px;
+    }
+}
+@media (min-width: 1024px) {
+    .main {
+        margin-bottom: 60px;
+    }
+}
+@media (min-width: 960px) {
+    body {
+        padding-top: 50px;
+
+    }
+    .main {
+        max-width: 100%;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .main__content {
+        width: 981px;
+        margin: 0;
+    }
+    .info__show-more {
+        display: none;
+    }
+    .sidebar {
+        max-height: 100%;
+        width: 200px;
+    }
+    .sidebar__info-more {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s ease 0s;
+    }
+    .sidebar__info {
+        flex-direction: column;
+    }
+    .avatar__wrapper {
+        width: 125px;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .social__list {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-left: 0px;
+     }
+
+}
+
+@media (max-width: 960px) {
+    body {
+        padding-right: 15px;
+    }
+}
+@media (min-width: 960px) {
+   
+    .main__content {
+        position: relative;
+        background-color: #242424;
+        max-height: 507px;
+        background: #242424;
+        border-radius: 25px;
+    }
+    .navbar {
+        position: absolute;
+        top: 0px;
+        left: auto;
+        right: 0px;
+        max-width: max-content;
+        height: 62px;
+    }
+}
+@media (max-width: 960px) {
+    .main {
+        min-width: 100%;
+    }
 }
